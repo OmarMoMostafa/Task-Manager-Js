@@ -3,6 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const taskInput = document.getElementById("todo-input");
   const taskList = document.getElementById("todo-list");
 
+  const searchForm = document.querySelector(".search");
+  const searchInput = document.querySelector("#todo-search");
+  const showUncompletedCheck = document.querySelector("#show-uncompleted");
+  const sortFilter = document.querySelector("#sort-tasks");
+
   let tasks = [
     { id: 1, title: "say hello", status: false, userId: 1 },
     { id: 2, title: "say hi", status: false, userId: 1 },
@@ -67,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
     taskInput.focus();
   }
 
-  function renderTasks() {
+  function renderTasks(tasks) {
     taskList.innerHTML = "";
     tasks.forEach((task) => {
       appendTask(createTaskItem(task));
@@ -77,7 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   taskForm.addEventListener("submit", (e) => {
     e.preventDefault();
     tasks.push(createTaskObj(taskInput.value.trim()));
-    renderTasks();
+    renderTasks(tasks);
   });
 
   taskList.addEventListener("click", (e) => {
@@ -91,9 +96,63 @@ document.addEventListener("DOMContentLoaded", () => {
         task.status = true;
       }
       tasks = [...tasks.filter((item) => item.id != clicked.id), task];
-      renderTasks();
+      renderTasks(sortTasks());
     }
   });
 
-  renderTasks();
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (!searchInput.value) {
+      renderTasks(tasks);
+    } else {
+      const searchTasks = tasks.filter((task) =>
+        task.title
+          .toLocaleLowerCase()
+          .includes(searchInput.value.toLocaleLowerCase().trim())
+      );
+      renderTasks(searchTasks);
+    }
+  });
+
+  showUncompletedCheck.addEventListener("change", () => {
+    renderTasks(filterTasks());
+  });
+
+  function filterTasks() {
+    if (showUncompletedCheck.checked) {
+      const uncompletedTasks = tasks.filter(
+        (task) => task.status !== showUncompletedCheck.checked
+      );
+      return uncompletedTasks;
+    } else {
+      return tasks;
+    }
+  }
+
+  function sortTasks() {
+    let sorted;
+
+    if (sortFilter.value == "completed") {
+      sorted = tasks.sort((a, b) => {
+        if (a.status) {
+          return -1;
+        }
+        return 0;
+      });
+    } else {
+      sorted = tasks.sort((a, b) => {
+        if (a.status) {
+          return 1;
+        }
+        return 0;
+      });
+    }
+    return sorted;
+  }
+
+  sortFilter.addEventListener("change", () => {
+    renderTasks(sortTasks());
+  });
+
+  renderTasks(tasks);
 });

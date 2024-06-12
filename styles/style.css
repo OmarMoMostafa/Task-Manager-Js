@@ -173,6 +173,17 @@ main .cover h5 {
   width: calc(100% - 90px);
 }
 
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.search-container input {
+  padding: 10px;
+}
+
 .task-list {
   max-height: 24rem;
   overflow-y: auto;

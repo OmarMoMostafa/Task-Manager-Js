@@ -29,6 +29,32 @@
             <input type="text" id="todo-input" placeholder="Enter a new task" />
             <button class="btn" type="submit">Add Task</button>
           </form>
+
+          <div class="search-container">
+            <form class="search">
+              <input
+                class="search-input"
+                type="text"
+                id="todo-search"
+                placeholder="Search tasks"
+              />
+              <button class="btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+            <label>
+              <input type="checkbox" id="show-uncompleted" />
+              Show only uncompleted tasks
+            </label>
+            <label>
+              Sort by:
+              <select id="sort-tasks">
+                <option value="uncompleted">Uncompleted</option>
+                <option value="completed">Completed</option>
+              </select>
+            </label>
+          </div>
+
           <ul class="task-list" id="todo-list"></ul>
         </div>
       </div>
