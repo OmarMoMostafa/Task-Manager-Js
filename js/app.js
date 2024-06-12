@@ -154,5 +154,6 @@ document.addEventListener("DOMContentLoaded", () => {
     renderTasks(sortTasks());
   });
 
+  // render tasks
   renderTasks(tasks);
 });
