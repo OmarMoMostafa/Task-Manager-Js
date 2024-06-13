@@ -232,6 +232,12 @@ li.completed {
   margin-left: 5px;
 }
 
+@media only screen and (max-width: 768px) {
+  .search-container {
+    flex-direction: column;
+  }
+}
+
 /* ---------- about page ---------- */
 
 .about-title {
