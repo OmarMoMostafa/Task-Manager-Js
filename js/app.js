@@ -14,6 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
     { id: 3, title: "say hey", status: false, userId: 1 },
   ];
 
+  const fetchTasks = () => {
+    const res = fetch("https://jsonplaceholder.typicode.com/todos?userId=1")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  };
+
   function createTaskObj(title) {
     return { title, status: false, userId: 1 };
   }
