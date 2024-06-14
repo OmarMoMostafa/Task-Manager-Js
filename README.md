@@ -20,22 +20,6 @@ Task Manager is a simple web application to help you manage your tasks effective
 - Mark tasks as completed or uncompleted
 - Filter tasks based on their completion status
 
-## Installation
-To get a local copy of the project up and running, follow these simple steps.
-
-Clone the repository:
-\`\`\'
-git clone https://github.com/your-username/Task-Manager.git
-\`\`\`
-Navigate to the project directory:
-\`\`\`
-cd Task-Manager
-\`\`\`
-Open index.html in your preferred browser:
-\`\`\`
-open index.html
-\`\`\`
-
 ## Usage
 After opening index.html, you can interact with the application through the web interface:
 - Use the input field to add new tasks.
