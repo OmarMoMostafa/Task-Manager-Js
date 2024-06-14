@@ -45,7 +45,6 @@ After opening index.html, you can interact with the application through the web 
 - Use the filter options to show only completed or uncompleted tasks.
 
 ## File Structure
-\`\`\`arduino
 Task-Manager/
 ├── images/
 │   └── cover.png
