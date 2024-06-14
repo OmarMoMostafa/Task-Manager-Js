@@ -24,15 +24,15 @@ Task Manager is a simple web application to help you manage your tasks effective
 To get a local copy of the project up and running, follow these simple steps.
 
 Clone the repository:
-\`\`\`sh
+\`\`\'
 git clone https://github.com/your-username/Task-Manager.git
 \`\`\`
 Navigate to the project directory:
-\`\`\`sh
+\`\`\`
 cd Task-Manager
 \`\`\`
 Open index.html in your preferred browser:
-\`\`\`sh
+\`\`\`
 open index.html
 \`\`\`
 
@@ -44,19 +44,7 @@ After opening index.html, you can interact with the application through the web 
 - Use the delete button (trash icon) to remove a task.
 - Use the filter options to show only completed or uncompleted tasks.
 
-## File Structure
-Task-Manager/
-├── images/
-│   └── cover.png
-├── js/
-│   ├── app.js
-│   └── contact.js
-├── styles/
-│   └── style.css
-├── about.html
-├── contact.html
-├── index.html
-└── tasks.html
+
 \`\`\`
 ### Description of Key Files
 - `index.html`: The main landing page for the Task Manager application.
